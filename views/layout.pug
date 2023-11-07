@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header
+      h1(id='headername') emily doherty
+      nav
+        ul(id='navbar')
+          li
+            a(href="/") home
+          li
+            a(href="/about") about 
+          li
+            a(href="projects") projects
+          li
+            a(href="/contact") get in touch
+    block content

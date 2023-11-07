@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul#navbar {
+	display: inline;
+	text-align:right;
+}
+
+ul#navbar li {
+	display:inline;
+}
+
+/*change color to white once done*/
+ul#navbar li a {
+	display: inline;
+  	color: blue;
+  	text-align: right;
+  	padding: 14px 16px;
+	text-decoration: none;
+}
+
+h1#mainname {
+	display: inline;
+	text-align: right;
+}
+
