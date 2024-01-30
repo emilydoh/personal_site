@@ -1,8 +1,62 @@
 extends layout
 
 block content
-    h1
-        | Get in touch
-    p
-        | If you would like to collaborate on a project, please don't hesitate to reach out, I am always looking for new
-        | ideas and projects to improve.
+    section(id="contact_container")
+        section(id="contact_wrapper")
+            h1 Contact
+            p
+                | Have a question or want to work together?
+                | Leave your details and I"ll get back to you as soon as possible.
+
+            // action is where we"ll send the form to be handled
+            form(id="contact_form" action="/submit-form" method="post")
+
+                // for forms Web3Forms
+                input(type="hidden" name="access_key" value="98be72da-3f7a-4d71-9bda-e9dcd50a11ec")
+
+                input(placeholder="Name" type="text" name="name" class="input_field" required)
+                br
+                input(type="email" name="email" placeholder="Email" class="input_field" required)
+                br
+                textarea(placeholder="Message" name="message" class="input_field" id="message_box" required)
+                div(class="contact_submit")
+                button(type="submit" class="contact_submit") Submit
+
+
+    // *************8 can't do this easily in Node => HTTP requests, need to make a sep route for post requests
+    //script src="https://web3forms.com/client/script.js" async defer
+
+
+    //div id="statusMessage"
+    //
+    //script
+    //    async function submitForm() {
+    //        const form = document.getElementById('myForm');
+    //        const statusMessage = document.getElementById('statusMessage');
+    //
+    //        // Your AJAX submission logic using Fetch or Axios
+    //        const formData = new FormData(form);
+    //        try {
+    //            const response = await fetch('http://localhost:3000/submit-form', {
+    //                method: 'POST',
+    //        body: formData
+    //    });
+    //
+    //    const data = await response.json();
+    //
+    //    // Handle the response
+    //    console.log(data);
+    //
+    //    if (data.success) {
+    //        // If the submission is successful, update the status message and clear the form
+    //        statusMessage.textContent = 'Form successfully submitted';
+    //        form.reset();
+    //    } else {
+    //    // If there is an error, update the status message accordingly
+    //    statusMessage.textContent = data.error || 'Error submitting the form';
+    //    }
+    //    } catch (error) {
+    //    console.error('Error submitting form:', error);
+    //    statusMessage.textContent = 'Internal Server Error';
+    //    }
+    //    }

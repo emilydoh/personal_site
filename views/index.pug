@@ -1,9 +1,32 @@
-extends layout
 
-block content
-  section(id = 'banner')
-    div(class = 'inner')
-      | Emily Doherty is an undergraduate at Boston University graduating spring 2023 based in Boston and New York
-  section(id= 'section1')
-    h1 Welcome
-    p Hi, I'm Emily. This is my site where you can find information about me, projects, link to my Github, and ways to get in contact with me. Enjoy your stay :)
+// home page
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    div(class="banner_image")
+      header
+        h2(id='homename', class='name') emilydoherty
+        nav
+          ul(id='homenav', class='navigationbar')
+            li
+              a(href="/") Home
+            li
+              a(href="/about") About
+            li
+              a(href="projects") Projects
+            li
+              a(href="/contact") Contact
+      div(class="inner")
+        div(id="hi_wrapper")
+          p Hey, I'm Emily
+          span(class="wave") 👋🏻
+        div(class="buttons_container")
+          div(class="buttons")
+            a(href="./Emily Doherty Resume.pdf")
+              button Resume
+            a(href="/contact")
+              button Get in touch
+      div

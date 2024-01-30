@@ -1,32 +1,236 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+p, h2, .navigationbar {
+	color: black;
+	opacity: .80;
+}
+
+/* was 14px, includes both the nav bar right side and the main content*/
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 42px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+/* main text content sections*/
+.maincontent {
+	padding: 200px;
+	padding-top: 70px;
+	font-size: 25px;
+	opacity: .8;
 }
 
 a {
   color: #00B7FF;
 }
 
-ul#navbar {
+#about_flex_container {
+	display: flex;
+	width: 1500px
+}
+.about_text {
+	padding-right: 40px;
+}
+.about_photo {
+	width: 350px;
+	padding-top: 40px;
+}
+
+.banner_image {
+	width: 100vw;
+	height: 100vh;
+	/*background-image: url("../images/quinton-coetzee-tvnp4r6xzvY-unsplash.jpg");*/
+	background-image: url("../images/valeria-nikitina-0u2YMknrG34-unsplash.jpg");
+	/*background-image: url("../images/parker-coffman-uvc7kk_t9tk-unsplash.jpg");*/
+
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+/* top bar*/
+.name {
+	display: inline-block;
+	font-size: 35px;
+	padding-top: 28px;
+	padding-left: 22px;
+	opacity: .8;
+}
+nav {
+	/*padding: 25px;*/
+	padding-right: 15px;
+	padding-top: 25px;
+}
+/*alternate color for home page*/
+#homename, #homenav li a {
+	color: white;
+}
+nav {
+	display: inline;
+	float: right;
+}
+ul {
 	display: inline;
 	text-align:right;
+	list-style-type: none;
 }
-
-ul#navbar li {
-	display:inline;
-}
-
-/*change color to white once done*/
-ul#navbar li a {
+.navigationbar li a {
 	display: inline;
-  	color: blue;
-  	text-align: right;
-  	padding: 14px 16px;
+	color: black;
+	opacity: .8;
+	text-align: right;
+	font-weight: bold;
+	font-size: 30px;
+	padding: 0 25px;
 	text-decoration: none;
 }
 
-h1#mainname {
-	display: inline;
-	text-align: right;
+ul.navigationbar li {
+	display:inline;
 }
 
+
+/* inner*/
+#hi_wrapper {
+	padding-top: 60px;
+	font-size: 130px;
+	text-align: center;
+}
+
+#hi_wrapper p {
+	display: inline;
+	color: white;
+}
+
+/* the set of 2 resume/get in touch buttons */
+.buttons_container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0;
+	align-content: center;
+}
+.buttons {
+	margin: auto;
+}
+button {
+
+	margin: 12px;
+	background-color:  #f8f7e4;
+	opacity: .65;
+	cursor: pointer;
+	outline: 0;
+	display: inline-block;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	padding: 6px 20px;
+	font-size: 1rem;
+	border-radius: .25rem;
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	color: #545c85 ;
+	border-color:  #545c85 ;
+	:hover {
+		color: #fff;
+		background-color: #0d6efd;
+		border-color: #0d6efd;
+	}
+
+}
+
+
+/*contact pg*/
+#contact_container {
+	width: 100vw;
+	height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#contact_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  margin-bottom: 10rem;
+}
+#contact_form {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+/*margin border not working*/
+#contact_wrapper h1 {
+	margin-bottom: 1.5rem;
+	opacity: .8;
+}
+#contact_wrapper p {
+	font-size: 1.4rem;
+	margin-bottom: 2rem;
+}
+.contact_submit button {
+	background-color: black;
+	color: white;
+	/*border-color: black;*/
+	opacity: .55;
+}
+.input_field {
+	width: 500px;
+	font-size: 1.1rem;
+	margin-bottom: 4px;
+	background-color: #e9e9e4;
+	/*opacity: .1;*/
+	color: black;
+	font-family: Helvetica;
+	padding: 8px;
+}
+#message_box {
+	height: 100px;
+}
+body {
+	min-height: 100vh;
+}
+
+.success_msg {
+	color: green;
+}
+
+.fail_msg {
+	color: red;
+}
+
+.wave {
+	animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+	animation-duration: 2.5s;        /* Change to speed up or slow down */
+	animation-iteration-count: infinite;  /* Never stop waving :) */
+	transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+	display: inline-block;
+}
+
+@keyframes wave-animation {
+	0% { transform: rotate( 0.0deg) }
+	10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+	20% { transform: rotate(-8.0deg) }
+	30% { transform: rotate(14.0deg) }
+	40% { transform: rotate(-4.0deg) }
+	50% { transform: rotate(10.0deg) }
+	60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+	100% { transform: rotate( 0.0deg) }
+}

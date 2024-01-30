@@ -5,15 +5,15 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     header
-      h1(id='headername') emily doherty
+      h1(id='headername', class='name') emilydoherty
       nav
-        ul(id='navbar')
+        ul(class='navigationbar')
           li
-            a(href="/") home
+            a(href="/") Home
           li
-            a(href="/about") about 
+            a(href="/about") About
           li
-            a(href="projects") projects
+            a(href="/projects") Projects
           li
-            a(href="/contact") get in touch
+            a(href="/contact") Contact
     block content

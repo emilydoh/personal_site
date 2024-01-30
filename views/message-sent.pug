@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    section(id="contact_container")
+        section(id="contact_wrapper")
+            h1 Contact
+            p
+                | Have a question or want to work together?
+                | Leave your details and I"ll get back to you as soon as possible.
+
+            // action is where we"ll send the form to be handled
+            form(id="contact_form" action="/submit-form" method="post")
+
+                // for forms Web3Forms
+                input(type="hidden" name="access_key" value="98be72da-3f7a-4d71-9bda-e9dcd50a11ec")
+
+                input(placeholder="Name" type="text" name="name" class="input_field" required)
+                br
+                input(type="email" name="email" placeholder="Email" class="input_field" required)
+                br
+                textarea(placeholder="Message" name="message" class="input_field" id="message_box" required)
+                div(class="contact_submit")
+                button(type="submit" class="contact_submit") Submit
+
+            p(class="success_msg") Thanks! Your message was sent.
